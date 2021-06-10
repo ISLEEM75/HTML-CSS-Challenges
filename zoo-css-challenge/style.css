@@ -14,14 +14,20 @@ nav {
     width: 100%;
 }
 
-header ul {
+nav ul {
     margin: 20px 0 0 0;
     padding: 0;
 }
 
-header ul li {
+nav ul li {
     display: inline-block;
     margin-right: 10px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    padding: 5px 10px;
+    text-decoration: none;
 }
 
 section {
@@ -104,8 +110,15 @@ footer {
     font-size: 125%;
 }
 
+.image-container {
+    display: flex;
+    flex-direction: row;
+}
+
 .image-container img {
     border: 5px solid #e44f4f;
+    margin: 5px;
+    width: 300px;
 }
 
 image-container img:last-of-type {
@@ -130,10 +143,13 @@ image-container img:last-of-type {
 }
 .card {
     display: inline-block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     padding: 20px;
     margin: 10px;
-    width: 30%;
+    width: 25%;
     border: 1px solid black;
     border-radius: 15px;
 }
@@ -149,15 +165,24 @@ image-container img:last-of-type {
     display: inline-block;
     margin-bottom: 10px;
 }
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    text-align: center;
+}
 
 /*Education*/
 .education {
+    display: flex;
     height: 500px;
     background-image: url("https://source.unsplash.com/1200x900/?tiger");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     padding: 100px 5%;
+    justify-content: center;
+    align-items: center;
 }
 .education-container {
     background-color: rgba(255, 255, 255, 0.75);
@@ -192,7 +217,17 @@ button:focus {
 }
 
 /*Programs*/
-.programs .card {
-    display: inline-block;
-    max-width: 25%;
+@media (max-width: 780px) {
+    section {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .cards {
+        flex-direction: column;
+    }
+    
+    .image-container {
+        flex-direction: column;
+    }
 }
